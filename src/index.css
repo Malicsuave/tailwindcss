@@ -1,0 +1,67 @@
+/* This file uses tailwind directives - https://tailwindcss.com/docs/functions-and-directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CY Grotesk Key Font */
+@font-face {
+  font-family: 'CY Grotesk Key';
+  src: url('/src/assets/fonts/CYGroteskKey-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom Global Styles */
+body {
+  @apply font-roboto-mono antialiased text-gray-200 bg-gray-900;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-ibm-plex font-semibold;
+}
+
+/* Custom animation for certain elements */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-cyan-800 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-cyan-700;
+}
+
+/* Focus styles for accessibility */
+:focus {
+  @apply outline-none ring-2 ring-cyan-500;
+}
+
+/* Common container styling */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
